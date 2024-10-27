@@ -6,7 +6,7 @@
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 20:37:28 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/10/27 15:48:02 by sel-bako         ###   ########.fr       */
+/*   Updated: 2024/10/27 18:20:59 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,26 @@
 char* ft_strrchr( char* str, int c )
 {
 	int size;
-	char * nstr;
-	size = ft_strlen(str) - 1;
-
+	const char * nstr;
+	
+	size = ft_strlen(str);
  	nstr = str + size;
-	while (*(nstr))
+	while (nstr != str)
 	{
-		if (*(nstr) == (char)c)
-		{
-			return (char *)(nstr);
-		}
-		(nstr)--;
-	}
-	return (0);
+		if (*(--nstr) == (char)c)
+			return (char *)nstr;
+	}	
+	if (c == '\0')
+		return (char *)nstr;
+	return (NULL);
 }
 
-int main()
-{
-	char s[10] = "";
-	char *str = ft_strrchr(s,'a');
-	printf("%s",str);
-}
+// #include <stdio.h>
+
+// int main()
+// {
+// 	char str[] = "Hello, World!";
+// 	char c = 'o';
+// 	printf("The last occurence of %c is at %s\n", c, ft_strrchr(str, c));
+// 	return 0;
+// }
