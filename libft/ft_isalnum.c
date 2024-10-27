@@ -6,7 +6,7 @@
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:07:32 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/10/23 14:57:01 by sel-bako         ###   ########.fr       */
+/*   Updated: 2024/10/27 17:13:20 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int	ft_isalnum(int c)
 {
 	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
+		return (1);  
 	return (0);
 }
