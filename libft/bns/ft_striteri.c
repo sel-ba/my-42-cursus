@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 14:59:44 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/10/23 18:55:59 by sel-bako         ###   ########.fr       */
+/*   Created: 2024/10/26 09:22:57 by sel-bako          #+#    #+#             */
+/*   Updated: 2024/10/26 10:07:38 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
 
-void	ft_bzero(void *s, size_t n)
+void ft_striteri(char *s, void (*f)(unsigned int,
+char*))
 {
-	if (s == NULL || n == 0)
-		return s;
-	char *str;
-	size_t i;
+	int i;
 
 	i = 0;
-	str = s;
-	while (i < n)
-		str[i++] = 0;
+	while (s[i])
+	{
+		(*f)(i, s);
+		i++;
+	}
 }
 
-// #include <stdio.h>
-
-// int main()
-// {
-// 	char s[20] = "sohaybbbbb";
-// 	ft_bzero(s+3,2);
-// 	printf("%s\n",s);
-// }
+void ft_toupper(unsigned int i, char *c)
+{
+	if (c[i] >= 'a' && c[i] <= 'z')
+		c[i] = c[i] - 32;
+}
+int main()
+{
+	char s[] = "adHHf";
+	ft_striteri(s, &ft_toupper);
+	printf("%s", s);
+}

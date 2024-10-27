@@ -1,0 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_front_hicham.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/26 14:10:31 by sel-bako          #+#    #+#             */
+/*   Updated: 2024/10/26 14:49:28 by sel-bako         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../libft.h"
+#include <stdio.h>
+
+void ft_lstadd_front(t_list **lst, t_list *new)
+{
+	t_list *swap;
+
+	new->next = *lst;
+	swap = *lst;
+	*lst = new;
+}
+int main()
+{
+	t_list* node0 = ft_lstnew("dfsaa");
+	t_list* node1 = ft_lstnew("1111");
+	t_list* node2 = ft_lstnew("2222");
+	t_list* node3 = ft_lstnew("33333");
+
+
+	node0->next = node1;
+	node1->next = node2;
+	node2->next = node3;
+
+	t_list* node = ft_lstnew("Fisrt");
+	ft_lstadd_front(&node0, node);
+	//printf("%s", node0->content);
+
+}

@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 14:59:44 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/10/23 18:55:59 by sel-bako         ###   ########.fr       */
+/*   Created: 2024/10/26 13:17:15 by sel-bako          #+#    #+#             */
+/*   Updated: 2024/10/26 13:19:25 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char *ft_strdup(char *src)
 {
-	if (s == NULL || n == 0)
-		return s;
-	char *str;
-	size_t i;
+	int src_len;
+	char *cpy;
+	int i;
 
+	src_len = ft_strlen(src);
+	cpy = (char *)malloc(src_len + 1);
 	i = 0;
-	str = s;
-	while (i < n)
-		str[i++] = 0;
+	while (src[i])
+	{
+		cpy[i] = src[i];
+		i++;
+	}
+	cpy[i] = '\0';
+	return (cpy);
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-// 	char s[20] = "sohaybbbbb";
-// 	ft_bzero(s+3,2);
-// 	printf("%s\n",s);
-// }

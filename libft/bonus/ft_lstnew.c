@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 14:59:44 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/10/23 18:55:59 by sel-bako         ###   ########.fr       */
+/*   Created: 2024/10/26 13:50:36 by sel-bako          #+#    #+#             */
+/*   Updated: 2024/10/26 14:24:04 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-void	ft_bzero(void *s, size_t n)
+t_list *ft_lstnew(void *content)
 {
-	if (s == NULL || n == 0)
-		return s;
-	char *str;
-	size_t i;
+	t_list *node;
 
-	i = 0;
-	str = s;
-	while (i < n)
-		str[i++] = 0;
+	node = (t_list *)malloc(sizeof(t_list));
+	node->content = content;
+	node->next = 0;
+	return (node);
 }
 
 // #include <stdio.h>
-
 // int main()
 // {
-// 	char s[20] = "sohaybbbbb";
-// 	ft_bzero(s+3,2);
-// 	printf("%s\n",s);
+// 	t_list *node = ft_lstnew("Hicham");
+// 	printf("%s", node->content);
+// 	free(node);
 // }

@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 14:59:44 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/10/23 18:55:59 by sel-bako         ###   ########.fr       */
+/*   Created: 2024/10/25 20:37:28 by sel-bako          #+#    #+#             */
+/*   Updated: 2024/10/27 15:48:02 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char* ft_strrchr( char* str, int c )
 {
-	if (s == NULL || n == 0)
-		return s;
-	char *str;
-	size_t i;
+	int size;
+	char * nstr;
+	size = ft_strlen(str) - 1;
 
-	i = 0;
-	str = s;
-	while (i < n)
-		str[i++] = 0;
+ 	nstr = str + size;
+	while (*(nstr))
+	{
+		if (*(nstr) == (char)c)
+		{
+			return (char *)(nstr);
+		}
+		(nstr)--;
+	}
+	return (0);
 }
 
-// #include <stdio.h>
-
-// int main()
-// {
-// 	char s[20] = "sohaybbbbb";
-// 	ft_bzero(s+3,2);
-// 	printf("%s\n",s);
-// }
+int main()
+{
+	char s[10] = "";
+	char *str = ft_strrchr(s,'a');
+	printf("%s",str);
+}

@@ -6,7 +6,7 @@
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:45:49 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/10/23 14:58:22 by sel-bako         ###   ########.fr       */
+/*   Updated: 2024/10/23 18:55:51 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 void *ft_memset(void *ptr, int x, size_t n)
 {
+	if (ptr == NULL || n == 0)
+		return ptr;
 	char *str;
-	int i;
+	size_t i;
 
 	i = 0;
 	str = ptr;

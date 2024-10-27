@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 14:59:44 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/10/23 18:55:59 by sel-bako         ###   ########.fr       */
+/*   Created: 2024/10/23 18:57:14 by sel-bako          #+#    #+#             */
+/*   Updated: 2024/10/23 19:49:14 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+size_t	strlcpy(char *dst, const char *src, size_t size)
 {
-	if (s == NULL || n == 0)
-		return s;
-	char *str;
 	size_t i;
 
+	if (size == 0)
+		return ft_strlen(src);
 	i = 0;
-	str = s;
-	while (i < n)
-		str[i++] = 0;
+	while (src[i] && i < size - 1)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }
 
-// #include <stdio.h>
-
-// int main()
-// {
-// 	char s[20] = "sohaybbbbb";
-// 	ft_bzero(s+3,2);
-// 	printf("%s\n",s);
-// }

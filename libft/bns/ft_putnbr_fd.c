@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 14:59:44 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/10/23 18:55:59 by sel-bako         ###   ########.fr       */
+/*   Created: 2024/10/26 10:34:19 by sel-bako          #+#    #+#             */
+/*   Updated: 2024/10/26 10:49:07 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
+#include <stdio.h>
 
-void	ft_bzero(void *s, size_t n)
+void ft_putnbr_fd(int n, int fd)
 {
-	if (s == NULL || n == 0)
-		return s;
-	char *str;
-	size_t i;
+	unsigned int nb;
 
-	i = 0;
-	str = s;
-	while (i < n)
-		str[i++] = 0;
+	nb = (unsigned int)n;
+	if (n < 0)
+	{
+		ft_putchar_fd('-',fd);
+		nb = - nb;
+	}
+	if (nb > 9)
+	{
+		ft_putnbr_fd(nb / 10, fd);
+	}
+	ft_putchar_fd(nb % 10 + '0',fd);
 }
 
-// #include <stdio.h>
-
-// int main()
-// {
-// 	char s[20] = "sohaybbbbb";
-// 	ft_bzero(s+3,2);
-// 	printf("%s\n",s);
-// }
+int main()
+{
+	int fd = open("file", O_RDWR | O_CREAT);
+	ft_putnbr_fd(2143648, fd);
+}
