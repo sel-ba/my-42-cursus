@@ -33,9 +33,8 @@ int memcmp(const void *str1, const void *str2, size_t n)
 
 // int main()
 // {
-//     char str1[] = "Hello, World!";
-//     char str2[] = "Hello, World!";
-//     size_t n = 5;
-//     printf("The result is: %d\n", memcmp(str1, str2, n));
+//     char str1[] = "abcdef";
+//     char str2[] = "abcdeF";
+//     printf("%d\n", memcmp(str1, str2, 6));
 //     return 0;
 // }
