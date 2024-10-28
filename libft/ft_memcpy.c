@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-void *ft_memcpy(void *to, const void *from, size_t n)
+void	*ft_memcpy(void *to, const void *from, size_t n)
 {
-	const char *strfrom;
-	char *strto;
-	size_t i;
-	
+	const char	*strfrom;
+	char		*strto;
+	size_t		i;
+
 	if (!to && !from)
-        return (NULL);
+		return (NULL);
 	i = 0;
 	strfrom = (char *)from;
 	strto = (const char *)to;
@@ -37,7 +37,7 @@ void *ft_memcpy(void *to, const void *from, size_t n)
 // {
 //     char str1[] = "sohayb";
 //     char str2[] = "elbakouri";
-//	   puts("str1 before memcpy ");
+//		puts("str1 before memcpy ");
 //     puts(str1);
 //     ft_memcpy(str1, str2, sizeof(str2));
 //     puts("\nstr1 after memcpy ");

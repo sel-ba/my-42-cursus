@@ -12,20 +12,20 @@
 
 #include "libft.h"
 
-char* ft_strrchr( char* str, int c )
+char	*ft_strrchr(char *str, int c)
 {
-	int size;
-	const char * nstr;
-	
+	int			size;
+	const char	*nstr;
+
 	size = ft_strlen(str);
- 	nstr = str + size;
+	nstr = str + size;
 	while (nstr != str)
 	{
 		if (*(--nstr) == (char)c)
-			return (char *)nstr;
-	}	
+			return ((char *)nstr);
+	}
 	if (c == '\0')
-		return (char *)nstr;
+		return ((char *)nstr);
 	return (NULL);
 }
 
@@ -36,5 +36,5 @@ char* ft_strrchr( char* str, int c )
 // 	char str[] = "Hello, World!";
 // 	char c = 'o';
 // 	printf("The last occurence of %c is at %s\n", c, ft_strrchr(str, c));
-// 	return 0;
+// 	return (0);
 // }

@@ -12,13 +12,13 @@
 
 #include "libft.h"
 
-void *ft_memset(void *ptr, int x, size_t n)
+void	*ft_memset(void *ptr, int x, size_t n)
 {
-	if (ptr == NULL || n == 0)
-		return ptr;
-	char *str;
-	size_t i;
+	char	*str;
+	size_t	i;
 
+	if (ptr == NULL || n == 0)
+		return (ptr);
 	i = 0;
 	str = ptr;
 	while (i < n)
@@ -40,5 +40,5 @@ void *ft_memset(void *ptr, int x, size_t n)
 //     ft_memset(arr, 7, n*sizeof(arr[0]));
 //     printf("Array after memset()\n");
 //     printArray(arr, n);
-//     return 0;
+//     return (0);
 // }
