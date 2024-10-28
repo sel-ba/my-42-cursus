@@ -12,18 +12,18 @@
 
 #include "libft.h"
 
-void *ft_memchr(const void *str, int c, size_t n)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
-    unsigned char *s;
+	unsigned char	*s;
 
-    s = (const unsigned char *)str;
-    while (n--)
-    {
-        if (*s == (unsigned char)c)
-            return (void *)s;
-        s++;
-    }
-    return (NULL);
+	s = (const unsigned char *)str;
+	while (n--)
+	{
+		if (*s == (unsigned char)c)
+			return ((void *)s);
+		s++;
+	}
+	return (NULL);
 }
 
 // #include <stdio.h>
@@ -33,5 +33,5 @@ void *ft_memchr(const void *str, int c, size_t n)
 //     char str[] = "Hello, World!";
 //     char c = 'W';
 //     printf("The first occurence of %c is at %s\n", c, ft_memchr(str, c, 13));
-//     return 0;
+//     return (0);
 // }

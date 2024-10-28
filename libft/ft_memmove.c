@@ -13,28 +13,28 @@
 #include "libft.h"
 
 // Handle overlapping != memcpy
-void *ft_memmove(void *to, const void *from, size_t n)
+void	*ft_memmove(void *to, const void *from, size_t n)
 {
-    if (to == NULL || from == NULL || n == 0)
-        return NULL;
-	const char *strfrom;
-    char *strto;
+	const char	*strfrom;
+	char		*strto;
 
+	if (to == NULL || from == NULL || n == 0)
+		return (NULL);
 	strfrom = (const char *)from;
 	strto = (char *)to;
 	if (strto < strfrom)
-    {
-        while (n--)
-            *strto++ = *strfrom++;
-    }
-    else
-    {
-        strto += n;
-        strfrom += n;
-        while (n--)
-            *(--strto) = *(--strfrom);
-    }
-    return (to);
+	{
+		while (n--)
+			*strto++ = *strfrom++;
+	}
+	else
+	{
+		strto += n;
+		strfrom += n;
+		while (n--)
+			*(--strto) = *(--strfrom);
+	}
+	return (to);
 }
 
 // #include <stdio.h>

@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c >= 'A' && c <= 'Z')
-        return (c + 32);
-    return c;
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }
 
 // #include <stdio.h>
@@ -23,5 +23,5 @@ int ft_tolower(int c)
 // {
 // 	char c = 'A';
 // 	printf("The lowercase of %c is %c\n", c, ft_tolower(c));
-// 	return 0;
+// 	return (0);
 // }
