@@ -6,7 +6,7 @@
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 13:17:15 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/10/26 13:19:25 by sel-bako         ###   ########.fr       */
+/*   Updated: 2024/10/29 22:07:47 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ char	*ft_strdup(char *src)
 	char	*cpy;
 	int		i;
 
-	src_len = ft_strlen(src);
-	cpy = (char *)malloc(src_len + 1);
+	cpy = (char *)malloc(ft_strlen(src) + 1);
 	i = 0;
 	while (src[i])
 	{
