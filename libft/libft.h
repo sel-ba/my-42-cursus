@@ -6,7 +6,7 @@
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:21:05 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/10/28 18:33:01 by sel-bako         ###   ########.fr       */
+/*   Updated: 2024/10/29 22:02:36 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ t_list *ft_lstlast(t_list *lst);
 void ft_lstdelone(t_list *lst, void (*del)(void*));
 void *ft_memcpy(void *to, const void *from, size_t n);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
+void	ft_bzero(void *s, size_t n);
 
 
 #endif
