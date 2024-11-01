@@ -6,7 +6,7 @@
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:23:53 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/10/27 17:40:26 by sel-bako         ###   ########.fr       */
+/*   Updated: 2024/10/30 13:27:05 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memcpy(void *to, const void *from, size_t n)
 		return (NULL);
 	i = 0;
 	strfrom = (char *)from;
-	strto = (const char *)to;
+	strto = (char *)to;
 	while (i < n)
 	{
 		strto[i] = strfrom[i];

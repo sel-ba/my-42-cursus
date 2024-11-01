@@ -6,7 +6,7 @@
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 13:17:15 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/10/29 22:07:47 by sel-bako         ###   ########.fr       */
+/*   Updated: 2024/11/01 21:44:27 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,14 @@ char	*ft_strdup(char *src)
 	cpy[i] = '\0';
 	return (cpy);
 }
+
+// #include <stdio.h>
+
+// int main()
+// {
+// 	char str[] = "Hello, World!";
+// 	char *cpy = ft_strdup(str);
+// 	printf("The copied string is: %s\n", cpy);
+// 	free(cpy);
+// 	return (0);
+// }

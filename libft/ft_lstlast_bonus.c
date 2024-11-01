@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 15:35:59 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/10/26 15:43:48 by sel-bako         ###   ########.fr       */
+/*   Created: 2024/10/26 15:29:58 by sel-bako          #+#    #+#             */
+/*   Updated: 2024/11/01 21:55:08 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include <stdio.h>
+#include "libft.h"
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+t_list	*ft_lstlast(t_list *lst)
 {
-	while((*lst)->next != NULL)
-		(*lst) = (*lst)->next;
-	(*lst)->next = new;
-
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
+
+// #include <stdio.h>
 
 // int main()
 // {
@@ -27,16 +27,13 @@ void ft_lstadd_back(t_list **lst, t_list *new)
 // 	t_list* node1 = ft_lstnew("1111");
 // 	t_list* node2 = ft_lstnew("2222");
 // 	t_list* node3 = ft_lstnew("33333");
-
-
 // 	node0->next = node1;
 // 	node1->next = node2;
 // 	node2->next = node3;
-
-// 	t_list* node = ft_lstnew("Fisrt");
-// 	ft_lstadd_back(&node0, node);
-// 	t_list *last = ft_lstlast(node0);
-
-// 	printf("%s", last->content);
-
+// 	t_list *lastn = ft_lstlast(node0);
+// 	printf("%s", lastn->content);
+// 	free(node0);
+// 	free(node1);
+// 	free(node2);
+// 	free(node3);
 // }
