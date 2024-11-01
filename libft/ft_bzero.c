@@ -6,7 +6,7 @@
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:59:44 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/10/27 17:34:53 by sel-bako         ###   ########.fr       */
+/*   Updated: 2024/10/30 13:57:24 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ void	ft_bzero(void *s, size_t n)
 // int main()
 // {
 // 	char s[20] = "sohayb";
-// 	ft_bzero(s+1,2);
+// 	ft_bzero(s+3,2);
 // 	printf("%s\n",s);
 // }

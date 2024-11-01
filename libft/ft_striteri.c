@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 20:30:49 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/11/01 21:38:28 by sel-bako         ###   ########.fr       */
+/*   Created: 2024/10/26 09:22:57 by sel-bako          #+#    #+#             */
+/*   Updated: 2024/11/01 21:51:13 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strchr(const char *str, int ch)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	while (*str)
+	int	i;
+
+	i = 0;
+	while (s[i])
 	{
-		if (*str == (char)ch)
-			return ((char *)(str));
-		str++;
+		(*f)(i, s);
+		i++;
 	}
-	if (ch == '\0')
-		return ((char *)(str));
-	return (NULL);
 }
 
 // #include <stdio.h>
 
+// void ft_toupper(unsigned int i, char *c)
+// {
+// 	if (c[i] >= 'a' && c[i] <= 'z')
+// 		c[i] = c[i] - 32;
+// }
 // int main()
 // {
-// 	char str[] = "Hello, World!";
-// 	char c = 'W';
-// 	printf("The first occurence of %c is at %s\n", c, ft_strchr(str, c));
-// 	return (0);
+// 	char s[] = "adHHf";
+// 	ft_striteri(s, &ft_toupper);
+// 	printf("%s", s);
 // }

@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 20:30:49 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/11/01 21:38:28 by sel-bako         ###   ########.fr       */
+/*   Created: 2024/11/01 21:59:43 by sel-bako          #+#    #+#             */
+/*   Updated: 2024/11/01 22:06:23 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int ch)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	while (*str)
+	t_list	*new_list;
+	t_list	*new_elem;
+
+	new_list = NULL;
+	while (lst)
 	{
-		if (*str == (char)ch)
-			return ((char *)(str));
-		str++;
+		new_elem = ft_lstnew(f(lst->content));
+		if (!new_elem)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, new_elem);
+		lst = lst->next;
 	}
-	if (ch == '\0')
-		return ((char *)(str));
-	return (NULL);
+	return (new_list);
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-// 	char str[] = "Hello, World!";
-// 	char c = 'W';
-// 	printf("The first occurence of %c is at %s\n", c, ft_strchr(str, c));
-// 	return (0);
-// }

@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 13:50:36 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/10/26 14:24:04 by sel-bako         ###   ########.fr       */
+/*   Created: 2024/11/01 22:07:01 by sel-bako          #+#    #+#             */
+/*   Updated: 2024/11/01 22:07:03 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-t_list *ft_lstnew(void *content)
+void	ft_putendl_fd(char *s, int fd)
 {
-	t_list *node;
-
-	node = (t_list *)malloc(sizeof(t_list));
-	node->content = content;
-	node->next = 0;
-	return (node);
+	write(fd, s, ft_strlen(s));
+	ft_putchar_fd('\n', fd);
 }
 
-// #include <stdio.h>
 // int main()
 // {
-// 	t_list *node = ft_lstnew("Hicham");
-// 	printf("%s", node->content);
-// 	free(node);
+// 	int fd = open("filenewline", O_RDWR | O_CREAT);
+// 	ft_putendl_fd("ghsjkjh", fd);
 // }

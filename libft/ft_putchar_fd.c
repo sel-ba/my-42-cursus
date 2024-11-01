@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 20:30:49 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/11/01 21:38:28 by sel-bako         ###   ########.fr       */
+/*   Created: 2024/10/26 09:26:11 by sel-bako          #+#    #+#             */
+/*   Updated: 2024/11/01 21:51:24 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int ch)
+void	ft_putchar_fd(char c, int fd)
 {
-	while (*str)
-	{
-		if (*str == (char)ch)
-			return ((char *)(str));
-		str++;
-	}
-	if (ch == '\0')
-		return ((char *)(str));
-	return (NULL);
+	write(fd, &c, sizeof(c));
 }
-
-// #include <stdio.h>
 
 // int main()
 // {
-// 	char str[] = "Hello, World!";
-// 	char c = 'W';
-// 	printf("The first occurence of %c is at %s\n", c, ft_strchr(str, c));
-// 	return (0);
+// 	int fd = open("file", O_RDWR | O_CREAT);
+// 	ft_putchar_fd('C', fd);
 // }

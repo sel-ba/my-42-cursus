@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 20:30:49 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/11/01 21:38:28 by sel-bako         ###   ########.fr       */
+/*   Created: 2024/10/26 13:50:36 by sel-bako          #+#    #+#             */
+/*   Updated: 2024/10/30 14:02:32 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int ch)
+t_list	*ft_lstnew(void *content)
 {
-	while (*str)
-	{
-		if (*str == (char)ch)
-			return ((char *)(str));
-		str++;
-	}
-	if (ch == '\0')
-		return ((char *)(str));
-	return (NULL);
+	t_list	*node;
+
+	node = (t_list *)malloc(sizeof(t_list));
+	node->content = content;
+	node->next = 0;
+	return (node);
 }
 
 // #include <stdio.h>
-
 // int main()
 // {
-// 	char str[] = "Hello, World!";
-// 	char c = 'W';
-// 	printf("The first occurence of %c is at %s\n", c, ft_strchr(str, c));
-// 	return (0);
+// 	t_list *node = ft_lstnew("SOhayb");
+// 	printf("%s", node->content);
+// 	free(node);
 // }

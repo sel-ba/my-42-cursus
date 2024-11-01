@@ -6,15 +6,16 @@
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 21:14:03 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/10/25 21:45:57 by sel-bako         ###   ########.fr       */
+/*   Updated: 2024/11/01 21:48:36 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int in(char const *set, char c)
+static int	in(char const *set, char c)
 {
-	int i;
+	int	i;
+
 	i = 0;
 	while (set[i])
 	{
@@ -25,10 +26,10 @@ int in(char const *set, char c)
 	return (0);
 }
 
-int count_chars(char const *str, char const *set)
+static int	count_chars(char const *str, char const *set)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -46,12 +47,12 @@ int count_chars(char const *str, char const *set)
 	return (count);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char *ptr;
-	int count;
-	int first;
-	int last;
+	char	*ptr;
+	int		count;
+	int		first;
+	int		last;
 
 	count = count_chars(s1, set);
 	ptr = (char *)malloc(ft_strlen(s1) - count + 1);
@@ -73,3 +74,14 @@ char *ft_strtrim(char const *s1, char const *set)
 	return (ptr);
 }
 
+// #include <stdio.h>
+
+// int main()
+// {
+// 	char str[] = "   Hello, World!   ";
+// 	char set[] = " ";
+// 	char *cpy = ft_strtrim(str, set);
+// 	printf("The copied string is: %s\n", cpy);
+// 	free(cpy);
+// 	return (0);
+// }

@@ -1,41 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 22:14:43 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/11/01 21:46:55 by sel-bako         ###   ########.fr       */
+/*   Created: 2024/10/25 22:26:37 by sel-bako          #+#    #+#             */
+/*   Updated: 2024/11/01 22:07:35 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	s1_len;
-	size_t	s2_len;
 	char	*ptr;
+	int		str_len;
+	int		i;
 
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	ptr = (char *)malloc(s1_len + s2_len + 1);
-	if (!ptr)
+	i = 0;
+	str_len = ft_strlen(s);
+	ptr = (char *)malloc((str_len + 1) * sizeof(char));
+	if (ptr == NULL)
 		return (NULL);
-	ft_memcpy(ptr, s1, s1_len);
-	ft_memcpy(ptr + s1_len, s2, s2_len);
-	ptr[s1_len + s2_len] = '\0';
+	while (s[i])
+	{
+		ptr[i] = (*f)(i, s[i]);
+		i++;
+	}
+	ptr[i] = '\0';
 	return (ptr);
 }
 
 // #include <stdio.h>
 
-// int	main(void)
+// char ft_toupper(unsigned int i, char c)
 // {
-// 	char s1[] = "Hello, ";
-// 	char s2[] = "World!";
-// 	char *ptr = ft_strjoin(s1, s2);
-// 	printf("%s\n", ptr);
-// 	return (0);
+// 	(void)i;
+// 	return (c - 32);
+// }
+
+// int main()
+// {
+// 	char const *s = "addff";
+// 	char *str = ft_strmapi(s, &ft_toupper);
+// 	printf("%s", str);
 // }
