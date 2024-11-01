@@ -6,7 +6,7 @@
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 21:10:42 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/10/27 18:31:00 by sel-bako         ###   ########.fr       */
+/*   Updated: 2024/11/01 22:24:09 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memchr(const void *str, int c, size_t n)
 {
 	unsigned char	*s;
 
-	s = (const unsigned char *)str;
+	s = (unsigned char *)str;
 	while (n--)
 	{
 		if (*s == (unsigned char)c)

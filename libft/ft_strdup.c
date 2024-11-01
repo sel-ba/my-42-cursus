@@ -6,7 +6,7 @@
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 13:17:15 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/11/01 21:44:27 by sel-bako         ###   ########.fr       */
+/*   Updated: 2024/11/01 22:24:32 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	*ft_strdup(char *src)
 {
-	int		src_len;
 	char	*cpy;
 	int		i;
 
