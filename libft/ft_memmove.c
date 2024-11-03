@@ -6,35 +6,42 @@
 /*   By: sel-bako <sel-bako@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:35:02 by sel-bako          #+#    #+#             */
-/*   Updated: 2024/11/01 21:36:41 by sel-bako         ###   ########.fr       */
+/*   Updated: 2024/11/03 18:45:56 by sel-bako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 // Handle overlapping != memcpy
-void	*ft_memmove(void *to, const void *from, size_t n)
-{
-	const char	*strfrom;
-	char		*strto;
+#include <stddef.h>
 
-	if (to == NULL || from == NULL || n == 0)
-		return (NULL);
-	strfrom = (const char *)from;
-	strto = (char *)to;
-	if (strto < strfrom)
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	unsigned char		*d;
+	const unsigned char	*s = src;
+
+	d = dest;
+	if (d == s || n == 0)
+	{
+		return (dest);
+	}
+	if (d < s)
 	{
 		while (n--)
-			*strto++ = *strfrom++;
+		{
+			*d++ = *s++;
+		}
 	}
 	else
 	{
-		strto += n;
-		strfrom += n;
+		d += n;
+		s += n;
 		while (n--)
-			*(--strto) = *(--strfrom);
+		{
+			*(--d) = *(--s);
+		}
 	}
-	return (to);
+	return (dest);
 }
 
 // #include <stdio.h>
