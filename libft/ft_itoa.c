@@ -12,58 +12,62 @@
 
 #include "libft.h"
 
-static int	num_of_digits(int n)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/13 11:58:05 by prossi            #+#    #+#             */
+/*   Updated: 2021/09/22 19:44:23 by prossi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+static unsigned int	num_digits(int number)
 {
-	int	i;
+	unsigned int	length;
 
-	i = 1;
-	while (n > 9)
+	length = 0;
+	if (number == 0)
+		return (1);
+	if (number < 0)
+		length += 1;
+	while (number != 0)
 	{
-		n /= 10;
-		i++;
+		number /= 10;
+		length++;
 	}
-	return (i);
-}
-
-static void	fill_string(char *str, int n, int ng)
-{
-	int	i;
-
-	if (ng)
-		str[0] = '-';
-	i = num_of_digits(n);
-	while (n > 9)
-	{
-		str[i--] = n % 10 + '0';
-		n /= 10;
-	}
-	str[i] = n % 10 + '0';
+	return (length);
 }
 
 char	*ft_itoa(int n)
 {
-	int		ng;
-	char	*str;
+	char			*string;
+	unsigned int	number;
+	unsigned int	length;
 
-	ng = 0;
-	if (n == -2147483648)
-		return ("-2147483648");
+	length = num_digits(n);
+	string = (char *)malloc(sizeof(char) * (length + 1));
+	if (string == NULL)
+		return (NULL);
 	if (n < 0)
 	{
-		n *= -1;
-		ng = 1;
+		string[0] = '-';
+		number = -n;
 	}
-	str = (char *)malloc(num_of_digits(n) + ng);
-	if (str == NULL)
-		return (NULL);
-	fill_string(str, n, ng);
-	return (str);
+	else
+		number = n;
+	if (number == 0)
+		string[0] = '0';
+	string[length] = '\0';
+	while (number != 0)
+	{
+		string[length - 1] = (number % 10) + '0';
+		number = number / 10;
+		length--;
+	}
+	return (string);
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-// 	char * str = ft_itoa(-2147483648);
-// 	printf("%s",str);
-// }

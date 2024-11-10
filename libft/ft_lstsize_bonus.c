@@ -16,25 +16,11 @@ int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
-	i = 1;
-	while (lst->next != NULL)
+	i = 0;
+	while (lst != NULL)
 	{
-		lst = lst->next;
 		i++;
+		lst = lst->next;
 	}
 	return (i);
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-// 	t_list* node0 = ft_lstnew("dfsaa");
-// 	// t_list* node1 = ft_lstnew("1111");
-// 	// t_list* node2 = ft_lstnew("2222");
-// 	// t_list* node3 = ft_lstnew("33333");
-// 	// node0->next = node1;
-// 	// node1->next = node2;
-// 	// node2->next = node3;
-// 	printf("%i", ft_lstsize(node0));
-// }

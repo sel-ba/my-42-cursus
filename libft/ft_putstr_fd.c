@@ -16,9 +16,3 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	write(fd, s, ft_strlen(s));
 }
-
-// int main()
-// {
-// 	int fd = open("file", O_RDWR | O_CREAT);
-// 	ft_putstr_fd("ghsjkjh", fd);
-// }

@@ -10,28 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (s[i])
+	while (s[i] != '\0')
 	{
-		(*f)(i, s);
+		f(i, s + i);
 		i++;
 	}
 }
-
-// #include <stdio.h>
-
-// void ft_toupper(unsigned int i, char *c)
-// {
-// 	if (c[i] >= 'a' && c[i] <= 'z')
-// 		c[i] = c[i] - 32;
-// }
-// int main()
-// {
-// 	char s[] = "adHHf";
-// 	ft_striteri(s, &ft_toupper);
-// 	printf("%s", s);
-// }

@@ -31,14 +31,3 @@ int	ft_atoi(const char *str)
 		num = num * 10 + (str[i++] - '0');
 	return (num * sign);
 }
-
-// #include <stdio.h>
-// #include <stdlib.h>
-
-// int main()
-// {
-//     char str[] = "--1234";
-//     printf("The result is: %d\n", ft_atoi(str));
-//     printf("The result is: %d\n", atoi(str));
-//     return (0);
-// }

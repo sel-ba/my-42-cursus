@@ -12,36 +12,23 @@
 
 #include "libft.h"
 
-// Handle overlapping != memcpy
-#include <stddef.h>
-
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char		*d;
-	const unsigned char	*s = src;
+	char	*data_dst;
+	char	*data_src;
 
-	d = dest;
-	if (d == s || n == 0)
-	{
-		return (dest);
-	}
-	if (d < s)
-	{
-		while (n--)
-		{
-			*d++ = *s++;
-		}
-	}
+	if (!src && !dst)
+		return (NULL);
+	if (src > dst)
+		dst = ft_memcpy(dst, src, len);
 	else
 	{
-		d += n;
-		s += n;
-		while (n--)
-		{
-			*(--d) = *(--s);
-		}
+		data_dst = (char *)dst;
+		data_src = (char *)src;
+		while (len--)
+			data_dst[len] = data_src[len];
 	}
-	return (dest);
+	return (dst);
 }
 
 // #include <stdio.h>
