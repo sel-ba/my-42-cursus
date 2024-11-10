@@ -12,33 +12,26 @@
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	little_len;
+	size_t	cur1;
+	size_t	cur2;
+	size_t	needle_len;
 
-	if (!*little)
-		return ((char *)big);
-	little_len = ft_strlen(little);
-	while (*big && len)
+	if (!needle[0])
+		return ((char *)haystack);
+	cur1 = 0;
+	needle_len = ft_strlen(needle);
+	while (haystack[cur1] && (cur1 + needle_len - 1) < len)
 	{
-		if (*big == *little)
+		cur2 = 0;
+		while (needle[cur2] && haystack[cur1 + cur2] == needle[cur2])
 		{
-			if (ft_strncmp(big, little, little_len) == 0)
-				return ((char *)big);
+			if (cur2 == needle_len - 1)
+				return ((char *)(haystack + cur1));
+			cur2++;
 		}
-		big++;
-		len--;
+		cur1++;
 	}
-	return (NULL);
+	return (0);
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-//     char str[] = "Hello, World!";
-//     char str2[] = "l";
-//     size_t len = 20;
-//     printf("first oc is at : %s\n", ft_strnstr(str, str2, len));
-//     return (0);
-// }

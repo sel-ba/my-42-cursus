@@ -19,13 +19,13 @@ char	*ft_strrchr(char *str, int c)
 
 	size = ft_strlen(str);
 	nstr = str + size;
+	if (c == '\0')
+		return ((char *)nstr);
 	while (nstr != str)
 	{
 		if (*(--nstr) == (char)c)
 			return ((char *)nstr);
 	}
-	if (c == '\0')
-		return ((char *)nstr);
 	return (NULL);
 }
 

@@ -12,76 +12,49 @@
 
 #include "libft.h"
 
-static int	in(char const *set, char c)
+static int	is_in_set(char const c, char const *set)
 {
-	int	i;
+	int	cur;
 
-	i = 0;
-	while (set[i])
-	{
-		if (set[i] == c)
+	cur = -1;
+	while (set[++cur])
+		if (set[cur] == c)
 			return (1);
-		i++;
-	}
 	return (0);
 }
 
-static int	count_chars(char const *str, char const *set)
+static char	*empty_string(void)
 {
-	int	i;
-	int	count;
+	char	*str;
 
-	i = 0;
-	count = 0;
-	while (in(set, str[i]))
-	{
-		count++;
-		i++;
-	}
-	i = ft_strlen(str) - 1;
-	while (in(set, str[i]))
-	{
-		count++;
-		i--;
-	}
-	return (count);
+	str = malloc(sizeof(char));
+	if (!str)
+		return (NULL);
+	ft_strlcpy(str, "", 1);
+	return (str);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*ptr;
-	int		count;
-	int		first;
-	int		last;
+	size_t	start;
+	size_t	end;
+	size_t	s1_len;
+	char	*trim;
 
-	count = count_chars(s1, set);
-	ptr = (char *)malloc(ft_strlen(s1) - count + 1);
-	first = 0;
-	while (in(set, s1[first]))
-	{
-		first++;
-	}
-	last = ft_strlen(s1) - 1;
-	while (in(set, s1[last]))
-	{
-		last--;
-	}
-	count = 0;
-	while (first <= last)
-	{
-		ptr[count++] = s1[first++];
-	}
-	return (ptr);
+	if (!s1 || !set)
+		return (NULL);
+	start = 0;
+	while (is_in_set(s1[start], set))
+		start++;
+	s1_len = ft_strlen(s1);
+	end = s1_len - 1;
+	if (start == s1_len)
+		return (empty_string());
+	while (is_in_set(s1[end], set))
+		end--;
+	trim = malloc((end - start + 2) * sizeof(char));
+	if (!trim)
+		return (NULL);
+	ft_strlcpy(trim, (s1 + start), (end - start + 2));
+	return (trim);
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-// 	char str[] = "   Hello, World!   ";
-// 	char set[] = " ";
-// 	char *cpy = ft_strtrim(str, set);
-// 	printf("The copied string is: %s\n", cpy);
-// 	free(cpy);
-// 	return (0);
-// }

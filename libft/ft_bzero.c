@@ -22,12 +22,3 @@ void	ft_bzero(void *s, size_t n)
 	while (i < n)
 		str[i++] = 0;
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-// 	char s[20] = "sohayb";
-// 	ft_bzero(s+3,2);
-// 	printf("%s\n",s);
-// }

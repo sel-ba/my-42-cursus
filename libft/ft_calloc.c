@@ -12,27 +12,19 @@
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nitems, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	void	*ptr;
+	size_t	b;
+	void	*p;
 
-	ptr = malloc(nitems * size);
-	if (!ptr)
+	if (count == 0 || size == 0)
+		return (malloc(0));
+	if (count > SIZE_MAX / size)
 		return (NULL);
-	ft_bzero(ptr, nitems * size);
-	return (ptr);
+	b = count * size;
+	p = malloc(b);
+	if (p == NULL)
+		return (NULL);
+	ft_bzero(p, b);
+	return (p);
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-// 	int *ptr;
-// 	int nitems = 5;
-// 	int size = sizeof(int);
-// 	ptr = ft_calloc(nitems, size);
-// 	for (int i = 0; i < nitems; i++)
-// 		printf("%d\n", ptr[i]);
-// 	free(ptr);
-// 	return (0);
-// }
