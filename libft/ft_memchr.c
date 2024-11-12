@@ -25,13 +25,3 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	}
 	return (NULL);
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-//     char str[] = "Hello, World!";
-//     char c = 'W';
-//     printf("The first occurence of %c is at %s\n", c, ft_memchr(str, c, 13));
-//     return (0);
-// }

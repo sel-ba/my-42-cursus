@@ -28,11 +28,3 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	ft_putchar_fd(nb % 10 + '0', fd);
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-// 	int fd = open("file", O_RDWR | O_CREAT);
-// 	ft_putnbr_fd(2143648, fd);
-// }

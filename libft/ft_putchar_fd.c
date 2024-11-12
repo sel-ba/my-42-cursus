@@ -16,9 +16,3 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, sizeof(c));
 }
-
-// int main()
-// {
-// 	int fd = open("file", O_RDWR | O_CREAT);
-// 	ft_putchar_fd('C', fd);
-// }

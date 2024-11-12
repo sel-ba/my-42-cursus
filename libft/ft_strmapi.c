@@ -31,18 +31,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	ptr[i] = '\0';
 	return (ptr);
 }
-
-// #include <stdio.h>
-
-// char ft_toupper(unsigned int i, char c)
-// {
-// 	(void)i;
-// 	return (c - 32);
-// }
-
-// int main()
-// {
-// 	char const *s = "addff";
-// 	char *str = ft_strmapi(s, &ft_toupper);
-// 	printf("%s", str);
-// }

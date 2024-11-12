@@ -29,16 +29,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (src_len);
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-// 	char str1[] = "sohayb";
-// 	char str2[] = "el bakouri";
-// 	puts("str1 before strlcpy ");
-// 	puts(str1);
-// 	ft_strlcpy(str1, str2, sizeof(str2));
-// 	puts("\nstr1 after strlcpy ");
-// 	puts(str1);
-// }

@@ -32,14 +32,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[i] = '\0';
 	return (str);
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-//     char str[] = "Hello, World!";
-//     char *cpy = ft_substr(str, 7, 5);
-//     printf("The copied string is: %s\n", cpy);
-//     free(cpy);
-//     return (0);
-// }
