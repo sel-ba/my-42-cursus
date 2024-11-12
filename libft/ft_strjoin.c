@@ -28,14 +28,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ptr[s1_len + s2_len] = '\0';
 	return (ptr);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char s1[] = "Hello, ";
-// 	char s2[] = "World!";
-// 	char *ptr = ft_strjoin(s1, s2);
-// 	printf("%s\n", ptr);
-// 	return (0);
-// }

@@ -12,34 +12,17 @@
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *s, int c, size_t len)
 {
-	size_t	cur;
+	size_t	i;
 	char	*data;
 
-	cur = 0;
-	data = (char *)b;
-	while (cur < len)
+	i = 0;
+	data = (char *)s;
+	while (i < len)
 	{
-		data[cur] = c;
-		cur++;
+		data[i] = c;
+		i++;
 	}
-	return (b);
+	return (s);
 }
-
-// #include <stdio.h>
-// void printArray(int arr[], int n)
-// {
-//    for (int i=0; i<n; i++)
-//       printf("%d ", arr[i]);
-// }
-
-// int main()
-// {
-//     int n = 10;
-//     int arr[n];
-//     ft_memset(arr, 7, n*sizeof(arr[0]));
-//     printf("Array after memset()\n");
-//     printArray(arr, n);
-//     return (0);
-// }

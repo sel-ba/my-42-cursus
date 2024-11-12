@@ -12,20 +12,6 @@
 
 #include "libft.h"
 
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/13 11:58:05 by prossi            #+#    #+#             */
-/*   Updated: 2021/09/22 19:44:23 by prossi           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "libft.h"
-
 static unsigned int	num_digits(int number)
 {
 	unsigned int	length;
@@ -45,29 +31,29 @@ static unsigned int	num_digits(int number)
 
 char	*ft_itoa(int n)
 {
-	char			*string;
-	unsigned int	number;
+	char			*str;
+	unsigned int	num;
 	unsigned int	length;
 
 	length = num_digits(n);
-	string = (char *)malloc(sizeof(char) * (length + 1));
-	if (string == NULL)
+	str = (char *)malloc(sizeof(char) * (length + 1));
+	if (str == NULL)
 		return (NULL);
 	if (n < 0)
 	{
-		string[0] = '-';
-		number = -n;
+		str[0] = '-';
+		num = -n;
 	}
 	else
-		number = n;
-	if (number == 0)
-		string[0] = '0';
-	string[length] = '\0';
-	while (number != 0)
+		num = n;
+	if (num == 0)
+		str[0] = '0';
+	str[length] = '\0';
+	while (num != 0)
 	{
-		string[length - 1] = (number % 10) + '0';
-		number = number / 10;
+		str[length - 1] = (num % 10) + '0';
+		num = num / 10;
 		length--;
 	}
-	return (string);
+	return (str);
 }
