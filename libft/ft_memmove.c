@@ -30,17 +30,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-
-// int main()
-// {
-//     char str1[] = "sohayb";
-//     char str2[] = "el bakouri";
-//     puts("str1 before memmove ");
-//     puts(str1);
-//     ft_memmove(str1, str2, sizeof(str2));
-//     puts("\nstr1 after memmove ");
-//     puts(str1);
-// }

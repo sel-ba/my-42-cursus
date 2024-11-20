@@ -30,16 +30,3 @@ void	*ft_memcpy(void *to, const void *from, size_t n)
 	}
 	return (to);
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-//     char str1[] = "sohayb";
-//     char str2[] = "elbakouri";
-//		puts("str1 before memcpy ");
-//     puts(str1);
-//     ft_memcpy(str1, str2, sizeof(str2));
-//     puts("\nstr1 after memcpy ");
-//     puts(str1);
-// }
